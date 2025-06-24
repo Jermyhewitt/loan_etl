@@ -1,0 +1,88 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: user_loan
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: step
+            data_type: bigint(20)
+          - name: type
+            data_type: text
+          - name: period
+            data_type: bigint(20)
+          - name: rating
+            data_type: text
+          - name: salary
+            data_type: decimal(38,9)
+          - name: status
+            data_type: text
+          - name: duedate
+            data_type: datetime(6)
+          - name: loan_id
+            data_type: bigint(20)
+          - name: user_id
+            data_type: bigint(20)
+          - name: validid
+            data_type: text
+          - name: deadline
+            data_type: datetime(6)
+          - name: employer
+            data_type: text
+          - name: expenses
+            data_type: decimal(38,9)
+          - name: flatrate
+            data_type: decimal(38,9)
+          - name: interest
+            data_type: decimal(38,9)
+          - name: createdat
+            data_type: datetime(6)
+          - name: education
+            data_type: text
+          - name: fullypaid
+            data_type: tinyint(1)
+          - name: principal
+            data_type: decimal(38,9)
+          - name: updatedat
+            data_type: datetime(6)
+          - name: approvedby
+            data_type: bigint(20)
+          - name: dependents
+            data_type: bigint(20)
+          - name: employerid
+            data_type: bigint(20)
+          - name: occupation
+            data_type: text
+          - name: description
+            data_type: text
+          - name: loanpayment
+            data_type: decimal(38,9)
+          - name: addressproof
+            data_type: text
+          - name: approveddate
+            data_type: datetime(6)
+          - name: promocontent
+            data_type: text
+          - name: homeownership
+            data_type: text
+          - name: maritalstatus
+            data_type: text
+          - name: repaymentdate
+            data_type: datetime(6)
+          - name: employmenttype
+            data_type: text
+          - name: monthsemployed
+            data_type: bigint(20)
+          - name: nextpaymentdate
+            data_type: datetime(6)
+          - name: statusjustification
+            data_type: text
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

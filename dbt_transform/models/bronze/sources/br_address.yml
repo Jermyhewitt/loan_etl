@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: address
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: city
+            data_type: text
+          - name: state
+            data_type: text
+          - name: street
+            data_type: text
+          - name: country
+            data_type: text
+          - name: building
+            data_type: text
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

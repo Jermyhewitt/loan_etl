@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: creditor
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: type
+            data_type: text
+          - name: amount
+            data_type: decimal(38,9)
+          - name: loan_id
+            data_type: bigint(20)
+          - name: user_id
+            data_type: bigint(20)
+          - name: createdat
+            data_type: datetime(6)
+          - name: updatedat
+            data_type: datetime(6)
+          - name: transaction_id
+            data_type: bigint(20)
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

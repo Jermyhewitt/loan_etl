@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: loan_transactions
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: amount
+            data_type: decimal(38,9)
+          - name: source
+            data_type: text
+          - name: loan_id
+            data_type: bigint(20)
+          - name: user_id
+            data_type: bigint(20)
+          - name: createdat
+            data_type: datetime(6)
+          - name: updatedat
+            data_type: datetime(6)
+          - name: deposit_id
+            data_type: bigint(20)
+          - name: transaction_type
+            data_type: text
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

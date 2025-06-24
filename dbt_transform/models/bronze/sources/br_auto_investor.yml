@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: auto_investor
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: max
+            data_type: bigint(20)
+          - name: rating
+            data_type: text
+          - name: userid
+            data_type: bigint(20)
+          - name: balance
+            data_type: bigint(20)
+          - name: returnoption
+            data_type: text
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

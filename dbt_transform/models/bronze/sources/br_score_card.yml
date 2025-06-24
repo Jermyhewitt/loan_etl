@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: score_card
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: name
+            data_type: text
+          - name: score
+            data_type: bigint(20)
+          - name: rating
+            data_type: text
+          - name: valueend
+            data_type: decimal(38,9)
+          - name: valuestart
+            data_type: decimal(38,9)
+          - name: description
+            data_type: text
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

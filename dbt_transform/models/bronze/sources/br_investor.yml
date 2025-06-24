@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: investor
+        columns:
+          - name: amount
+            data_type: decimal(38,9)
+          - name: userid
+            data_type: bigint(20)
+          - name: createdat
+            data_type: varchar(1024)
+          - name: updatedat
+            data_type: varchar(1024)
+          - name: investmentid
+            data_type: bigint(20)
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

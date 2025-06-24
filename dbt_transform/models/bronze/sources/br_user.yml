@@ -1,0 +1,64 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: user
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: dob
+            data_type: text
+          - name: kin
+            data_type: text
+          - name: trn
+            data_type: text
+          - name: role
+            data_type: text
+          - name: alias
+            data_type: text
+          - name: email
+            data_type: text
+          - name: gender
+            data_type: text
+          - name: salary
+            data_type: decimal(38,9)
+          - name: balance
+            data_type: decimal(38,9)
+          - name: employer
+            data_type: text
+          - name: lastname
+            data_type: text
+          - name: password
+            data_type: text
+          - name: createdat
+            data_type: datetime(6)
+          - name: education
+            data_type: text
+          - name: firstname
+            data_type: text
+          - name: telephone
+            data_type: text
+          - name: updatedat
+            data_type: datetime(6)
+          - name: employerid
+            data_type: bigint(20)
+          - name: occupation
+            data_type: text
+          - name: profile_pic
+            data_type: text
+          - name: address_proof
+            data_type: text
+          - name: maritalstatus
+            data_type: text
+          - name: account_updated
+            data_type: datetime(6)
+          - name: profilecomplete
+            data_type: tinyint(1)
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dbt-core = "*"
+dbt-mysql = "*"
+protobuf = "==4.25.3"
+great-expectations = "*"
+sqlalchemy = "*"
+pymysql = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.13"

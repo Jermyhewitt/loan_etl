@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: etl_source
+    database: etl_source
+    schema: etl_source
+    tables:
+      - name: loan_repayment
+        description: "Table containing loan repayment information"
+        columns:
+          - name: id
+            description: "Primary key of the loan repayment table"
+            data_type: int
+            tests:
+              - unique
+              - not_null
+          - name: loan_id
+            description: "ID of the loan"
+            data_type: int
+          - name: user_id
+            description: "ID of the user"
+            data_type: int
+          - name: transaction_id
+            description: "ID of the transaction"
+            data_type: int
+          - name: createdAt
+            description: "Timestamp when the loan repayment was created"
+            data_type: datetime
+          - name: updatedAt
+            description: "Timestamp when the loan repayment was last updated"
+            data_type: datetime
+          - name: amount
+            description: "Amount of the loan repayment"
+            data_type: decimal(15,2)
+          - name: systemFee
+            description: "System fee of the loan repayment"
+            data_type: decimal(15,4)
+          - name: interest
+            description: "Interest of the loan repayment"
+            data_type: decimal(15,4)
+          - name: principal
+          - name: refinancedInterest
+            description: "Interest amount from refinanced loans"
+            data_type: decimal(15,4)

@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: system_charges
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: charge
+            data_type: decimal(38,9)
+          - name: source
+            data_type: text
+          - name: loantype
+            data_type: text
+          - name: periodend
+            data_type: bigint(20)
+          - name: chargeunit
+            data_type: text
+          - name: periodstart
+            data_type: bigint(20)
+          - name: transactiontype
+            data_type: text
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

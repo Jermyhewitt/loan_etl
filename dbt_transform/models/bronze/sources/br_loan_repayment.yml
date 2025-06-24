@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: loan_repayment
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: amount
+            data_type: decimal(38,9)
+          - name: latefee
+            data_type: decimal(38,9)
+          - name: loan_id
+            data_type: bigint(20)
+          - name: user_id
+            data_type: bigint(20)
+          - name: interest
+            data_type: decimal(38,9)
+          - name: createdat
+            data_type: datetime(6)
+          - name: principal
+            data_type: decimal(38,9)
+          - name: systemfee
+            data_type: decimal(38,9)
+          - name: updatedat
+            data_type: datetime(6)
+          - name: transaction_id
+            data_type: bigint(20)
+          - name: refinancedinterest
+            data_type: decimal(38,9)
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

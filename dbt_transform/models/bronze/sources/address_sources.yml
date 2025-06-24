@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: etl_source
+    database: etl_source
+    schema: etl_source
+    tables:
+      - name: address
+        description: "Table containing address information"
+        columns:
+          - name: id
+            description: "Primary key of the address table"
+            tests:
+              - unique
+              - not_null
+          - name: streetAddress
+            description: "Street address line"
+          - name: city
+            description: "City name"
+          - name: state
+            description: "State or province"
+          - name: postalCode
+            description: "Postal or ZIP code"
+          - name: country
+            description: "Country name"
+          - name: createdAt
+            description: "Timestamp when the address record was created"
+          - name: updatedAt
+            description: "Timestamp when the address record was last updated" 

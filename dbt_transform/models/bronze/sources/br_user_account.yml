@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: user_account
+        columns:
+          - name: id
+            data_type: bigint(20)
+          - name: type
+            data_type: text
+          - name: userid
+            data_type: bigint(20)
+          - name: balance
+            data_type: bigint(20)
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+

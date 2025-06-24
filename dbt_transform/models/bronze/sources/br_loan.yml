@@ -1,0 +1,3 @@
+[0m11:50:09  Encountered an error:
+Compilation Error
+  Model 'model.dbt_transform.cleaned_loan' (models/bronze/cleaned_loan.sql) depends on a source named 'etl_source.loan' which was not found

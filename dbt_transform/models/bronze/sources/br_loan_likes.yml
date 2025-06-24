@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: loan_likes
+        columns:
+          - name: likes
+            data_type: tinyint(1)
+          - name: loan_id
+            data_type: bigint(20)
+          - name: user_id
+            data_type: bigint(20)
+          - name: _airbyte_raw_id
+            data_type: varchar(36)
+          - name: _airbyte_extracted_at
+            data_type: timestamp(6)
+          - name: _airbyte_meta
+            data_type: longtext
+
