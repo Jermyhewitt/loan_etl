@@ -9,8 +9,8 @@ select
     user.firstname as first_name,
     user.lastname as last_name,
     loan_repayment.id,
-    loan_id,
-    user_id,
+    loan.id as loan_id,
+    user.id as user_id,
     transaction_id,
     loan_repayment.createdAt as created_at,
     loan_repayment.updatedAt as updated_at,
@@ -19,10 +19,12 @@ select
     loan_repayment.interest,
     loan_repayment.principal,
     loan_repayment.lateFee,
-    loan_repayment.refinancedInterest
+    loan_repayment.refinancedInterest,
+    transferDate as transfer_date
 from {{ source('etl_source', 'loan_repayment') }} as loan_repayment
 join {{ source('etl_source', 'loan') }} as loan on loan_repayment.loan_id = loan.id
 join {{ source('etl_source', 'user') }} as user on loan_repayment.user_id = user.id
+join {{ source('etl_source', 'user_deposit') }} as user_deposit on user_deposit.loan_id = loan.id
 
 {% if is_incremental() %}
 

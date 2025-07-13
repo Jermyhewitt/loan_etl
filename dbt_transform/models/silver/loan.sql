@@ -14,5 +14,6 @@ select
     loan.updatedAt as updated_at,
     loan.approvedDate as approved_at,
     flatRate as flat_rate,
-    type
+    type,
+    fullyPaid as full_repayment
 from {{ source('etl_source', 'loan') }}

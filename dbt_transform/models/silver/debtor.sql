@@ -1,7 +1,8 @@
 {{
     config(
         materialized='incremental',
-        unique_key='loan_id'
+        unique_key='loan_id',
+        on_schema_change='sync_all_columns'
     )
 }}
 
@@ -11,7 +12,11 @@ select
     email,
     user.telephone as phone_number,
     loan.id as loan_id,
-    loan.approvedDate as approved_at
+    loan.approvedDate as approved_at,
+    loan.principal,
+    loan.period,
+    loan.interest as interest_rate,
+    loan.type
 from {{ source('etl_source', 'debtor') }} as debtor
 join {{ source('etl_source', 'user') }} as user on debtor.user_id = user.id
 join {{ source('etl_source', 'user_address') }} as user_address on user.id = user_address.userId

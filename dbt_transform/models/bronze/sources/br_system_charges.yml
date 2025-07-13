@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: etl_source
+    database: etl_source
     tables:
       - name: system_charges
         columns:

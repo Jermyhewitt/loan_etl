@@ -1,3 +1,62 @@
-[0m11:50:09  Encountered an error:
-Compilation Error
-  Model 'model.dbt_transform.cleaned_loan' (models/bronze/cleaned_loan.sql) depends on a source named 'etl_source.loan' which was not found
+version: 2
+
+sources:
+  - name: etl_source
+    tables:
+      - name: loan
+        columns:
+         - "name": "period"
+         - name: "nextPaymentDate"
+           data_type: timestamp(6)
+         - name: "dueDate"
+           data_type: timestamp(6)
+         - name: "rating"
+           data_type: varchar(255)
+         - name: "approvedBy"
+           data_type: bigint(20)
+         - name: "description"
+           data_type: text
+         - name: "statusJustification"
+           data_type: text
+         - name: "type"
+           data_type: varchar(255)
+         - name: "feePayment"
+           data_type: varchar(255)
+         - name: "principal"
+           data_type: decimal(10,2)
+         - name: "approvedDate"
+           data_type: timestamp(6)
+         - name: "flatRate"
+           data_type: decimal(10,2)
+         - name: "createdAt"
+           data_type: timestamp(6)
+         - name: "public" 
+         - name: "interest"
+           data_type: decimal(10,2)
+         - name: "repaymentDate"
+           data_type: timestamp(6)
+         - name: "promoContent"
+           data_type: text
+         - name: "step"
+           data_type: bigint(20)
+         - name: "id"
+           data_type: bigint(20)
+         - name: "deadline"
+           data_type: timestamp(6)
+         - name: "interestMethod"
+           data_type: varchar(255)
+         - name: "status"
+           data_type: varchar(255)
+         - name: "fullyPaid"
+           data_type: boolean
+         - name: "updatedAt"
+           data_type: timestamp(6)
+         - name: "_airbyte_raw_id"
+           data_type: varchar(36)
+         - name: "_airbyte_extracted_at"
+           data_type: timestamp(6)
+         - name: "_airbyte_meta"
+           data_type: longtext
+        description: "Loan data source with various attributes including payment details, status, and metadata."
+    
+

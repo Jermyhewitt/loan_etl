@@ -1,42 +1,24 @@
-{{ 
+{{
     config(
         materialized='table'
-    ) 
+    )
 }}
 
-WITH payday_loans AS (
-  SELECT
-    id,
-    principal,
-    DATE_FORMAT(approved_at, '%Y-%m') AS approved_month,
-    flat_rate * period AS total_fee
-  FROM {{ ref('loan') }}
-  WHERE approved_at IS NOT NULL
-    AND type = 'payday'
-),
-
-personal_loans AS (
-  SELECT
-    id,
-    principal,
-    DATE_FORMAT(approved_at, '%Y-%m') AS approved_month,
-    principal * interest_rate  AS total_fee
-  FROM {{ ref('loan') }}
-  WHERE approved_at IS NOT NULL
-    AND type = 'personal'
-),
-
-all_loans AS (
-  SELECT * FROM payday_loans
-  UNION ALL
-  SELECT * FROM personal_loans
+WITH monthly_payments AS (
+    SELECT
+        loan_id,
+        SUM(amount) AS total_payment
+    FROM {{ ref('loan_repayment') }}
+    GROUP BY loan_id
 )
 
 SELECT
-  approved_month,
+  DATE_FORMAT(l.created_at, '%Y-%m') AS approved_month,
   COUNT(*) AS total_loans,
-  SUM(principal) AS total_principal,
-  SUM(total_fee) AS total_profit
-FROM all_loans
+  SUM(l.principal) AS total_principal,
+  SUM(mp.total_payment) AS total_payment,
+  SUM(mp.total_payment) - SUM(l.principal) AS profit_loss,
+FROM monthly_payments mp
+JOIN {{ ref('loan') }} l ON mp.loan_id = l.id
 GROUP BY approved_month
 ORDER BY approved_month
