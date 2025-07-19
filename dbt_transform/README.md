@@ -17,6 +17,7 @@ Try running the following commands:
 
 Superset
 docker compose -f docker-compose-image-tag.yml up
+ http://localhost:8088
 
 Airflow
 airflow standalone
@@ -25,3 +26,5 @@ airflow standalone
 Airbyte 
 abctl local install
 abctl local credentials
+http://localhost:8000
+abctl local uninstall

@@ -1,0 +1,5 @@
+__pycache__
+dbt_transform/.user.yml
+dbt_transform/profiles.yml
+secrets.txt
+dbt.log

@@ -17,7 +17,7 @@ SELECT
   COUNT(*) AS total_loans,
   SUM(l.principal) AS total_principal,
   SUM(mp.total_payment) AS total_payment,
-  SUM(mp.total_payment) - SUM(l.principal) AS profit_loss,
+  SUM(mp.total_payment) - SUM(l.principal) AS profit_loss
 FROM monthly_payments mp
 JOIN {{ ref('loan') }} l ON mp.loan_id = l.id
 GROUP BY approved_month
